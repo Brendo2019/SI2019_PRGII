@@ -1,5 +1,7 @@
 package br.edu.unisep.exemplo;
 
+import javax.swing.JOptionPane;
+
 public class App {
 
 	public static void main(String[] args) {
@@ -40,8 +42,7 @@ public class App {
 
 		System.out.println("--- Apresentações ---");
 		System.out.println(p.apresentar());
-		System.out.println(p2.apresentar());
-		System.out.println(p3.apresentar());
+		JOptionPane.showMessageDialog(null, p2.apresentar());
 		
 	}
 	

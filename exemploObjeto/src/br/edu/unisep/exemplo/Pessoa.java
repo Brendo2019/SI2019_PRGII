@@ -10,8 +10,12 @@ public class Pessoa {
 	public String email;
 	
 	public String apresentar() {
-		return "Olá, eu sou " + nome + 
+		return "Olá, meu nome é " + nome + 
 				", tenho " + idade + " anos. Meu e-mail é " + email;
+	}
+	
+	public String apresentarInformal() {
+		return "E ae! " + nome + " aqui!";
 	}
 	
 }
