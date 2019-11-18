@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unisep.MainController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Client:" />
+      <TextField fx:id="txtClient" layoutX="14.0" layoutY="31.0" prefHeight="27.0" prefWidth="300.0" />
+      <Label layoutX="14.0" layoutY="67.0" text="E-mail:" />
+      <TextField fx:id="txtEmail" layoutX="14.0" layoutY="84.0" prefHeight="27.0" prefWidth="300.0" />
+      <RadioButton fx:id="rdStandard" layoutX="14.0" layoutY="126.0" mnemonicParsing="false" selected="true" text="Standard Plan">
+         <toggleGroup>
+            <ToggleGroup fx:id="plan_type" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="148.0" layoutY="126.0" mnemonicParsing="false" text="Group Plan" toggleGroup="$plan_type" />
+      <StackPane layoutY="154.0" prefHeight="100.0" prefWidth="329.0">
+         <children>
+            <AnchorPane fx:id="paneStandard" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="3.0" text="Devices:" />
+                  <TextField fx:id="txtDevices" layoutX="14.0" layoutY="20.0" prefHeight="27.0" prefWidth="110.0" />
+                  <RadioButton fx:id="rdBasic" layoutX="17.0" layoutY="57.0" mnemonicParsing="false" selected="true" text="Basic">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="standard_types" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rdIntermediate" layoutX="99.0" layoutY="57.0" mnemonicParsing="false" text="Intermediate" toggleGroup="$standard_types" />
+                  <RadioButton layoutX="219.0" layoutY="57.0" mnemonicParsing="false" text="Premium" toggleGroup="$standard_types" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneGroup" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Members:" />
+                  <TextField fx:id="txtMembers" layoutX="14.0" layoutY="23.0" prefHeight="27.0" prefWidth="110.0" />
+                  <CheckBox fx:id="chkMultipleAccess" layoutX="14.0" layoutY="60.0" mnemonicParsing="false" text="Multiple Access" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <Label fx:id="lblResult" alignment="CENTER" layoutX="14.0" layoutY="254.0" prefHeight="17.0" prefWidth="300.0" text="R$ 0,00">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="48.0" layoutY="295.0" prefHeight="29.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <children>
+            <Button defaultButton="true" mnemonicParsing="false" text="Calculate" />
+            <Button cancelButton="true" mnemonicParsing="false" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
