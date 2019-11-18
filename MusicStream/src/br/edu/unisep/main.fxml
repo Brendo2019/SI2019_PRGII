@@ -17,12 +17,12 @@
       <TextField fx:id="txtClient" layoutX="14.0" layoutY="31.0" prefHeight="27.0" prefWidth="300.0" />
       <Label layoutX="14.0" layoutY="67.0" text="E-mail:" />
       <TextField fx:id="txtEmail" layoutX="14.0" layoutY="84.0" prefHeight="27.0" prefWidth="300.0" />
-      <RadioButton fx:id="rdStandard" layoutX="14.0" layoutY="126.0" mnemonicParsing="false" selected="true" text="Standard Plan">
+      <RadioButton fx:id="rdStandard" layoutX="14.0" layoutY="126.0" mnemonicParsing="false" onAction="#onTypeChange" selected="true" text="Standard Plan">
          <toggleGroup>
             <ToggleGroup fx:id="plan_type" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton layoutX="148.0" layoutY="126.0" mnemonicParsing="false" text="Group Plan" toggleGroup="$plan_type" />
+      <RadioButton layoutX="148.0" layoutY="126.0" mnemonicParsing="false" onAction="#onTypeChange" text="Group Plan" toggleGroup="$plan_type" />
       <StackPane layoutY="154.0" prefHeight="100.0" prefWidth="329.0">
          <children>
             <AnchorPane fx:id="paneStandard" prefHeight="200.0" prefWidth="200.0">
@@ -54,7 +54,7 @@
       </Label>
       <HBox alignment="CENTER" layoutX="48.0" layoutY="295.0" prefHeight="29.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
          <children>
-            <Button defaultButton="true" mnemonicParsing="false" text="Calculate" />
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#calculate" text="Calculate" />
             <Button cancelButton="true" mnemonicParsing="false" text="Cancel" />
          </children>
       </HBox>
